@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="bpf_contoso_machineorder_contoso_machineprocurementprocess" />
+  <EntityRelationship Name="business_unit_contoso_machineorder" />
+  <EntityRelationship Name="lk_contoso_machineorder_createdby" />
+  <EntityRelationship Name="lk_contoso_machineorder_modifiedby" />
+  <EntityRelationship Name="lk_contoso_machineprocurementprocess_activestageid" />
+  <EntityRelationship Name="lk_contoso_machineprocurementprocess_createdby" />
+  <EntityRelationship Name="lk_contoso_machineprocurementprocess_modifiedby" />
+  <EntityRelationship Name="lk_contoso_machineprocurementprocess_processid" />
+  <EntityRelationship Name="organization_contoso_machineprocurementprocess" />
+  <EntityRelationship Name="owner_contoso_machineorder" />
+  <EntityRelationship Name="team_contoso_machineorder" />
+  <EntityRelationship Name="TransactionCurrency_contoso_MachineOrder" />
+  <EntityRelationship Name="user_contoso_machineorder" />
+</EntityRelationships>
