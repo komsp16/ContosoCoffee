@@ -34,10 +34,10 @@ on:
 
 env:
 #edit your values here
-  BUILD_ENVIRONMENT_URL: '<BUILDENVIRONMENTURL>'
-  PRODUCTION_ENVIRONMENT_URL: '<PRODENVIRONMENTURL>'
-  CLIENT_ID: '<APPID>'
-  TENANT_ID: '<TENANT ID>'
+  BUILD_ENVIRONMENT_URL: 'https://org223594d8.crm6.dynamics.com/'
+  PRODUCTION_ENVIRONMENT_URL: 'https://orgd0b35784.crm6.dynamics.com/'
+  CLIENT_ID: '59851365-221b-42d5-a602-07872ae57d13'
+  TENANT_ID: '6a2fe23e-30ec-4f03-9968-dfa1b770efb1' 
 
 permissions:
   contents: write
