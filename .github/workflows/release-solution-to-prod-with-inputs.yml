@@ -67,6 +67,13 @@ jobs:
         solution-folder: ${{ inputs.solution_source_folder}}/${{ inputs.solution_name }}
         solution-file: ${{ inputs.solution_outbound_folder}}/${{ inputs.solution_name }}.zip
         solution-type: Unmanaged
+
+    - name: Verify solution file exists (Windows)
+      id: file_check
+      run: |
+        if test -f solution-file; then
+          #solution-file exists
+        fi
     
     - name: Import solution as unmanaged to build env
       uses: microsoft/powerplatform-actions/import-solution@v0
