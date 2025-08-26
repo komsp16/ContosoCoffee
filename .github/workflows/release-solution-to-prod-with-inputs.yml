@@ -71,7 +71,7 @@ jobs:
     - name: Verify solution file exists (Windows)
       id: file_check
       run: |
-        if [ -f solution-file ]; then
+        if [ test -f solution-file ]; then
           #solution-file exists
         fi
     
