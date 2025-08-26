@@ -61,6 +61,9 @@ jobs:
       with:
         lfs: true
 
+    - name: powerplatform-actions
+      uses: microsoft/powerplatform-actions@v1.9.1
+
     - name: Pack solution
       uses: microsoft/powerplatform-actions/pack-solution@v0
       with:
