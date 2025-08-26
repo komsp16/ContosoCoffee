@@ -68,12 +68,16 @@ jobs:
         solution-file: ${{ inputs.solution_outbound_folder}}/${{ inputs.solution_name }}.zip
         solution-type: Unmanaged
 
-    - name: Verify solution file exists (Windows)
-      id: file_check
-      run: |
-        if [ -f solution-file ]; then
-          (#solution-file exists)
-        fi
+    - name: Check file existence
+      id: check_files
+      uses: andstor/file-existence-action@v3
+      with:
+          files: ${{ inputs.solution_outbound_folder}}/${{ inputs.solution_name }}.zip
+
+    - name: File exists
+      if: steps.check_files.outputs.files_exists == 'true'
+        # Only runs if all of the files exists
+      run: echo All files exists!
     
     - name: Import solution as unmanaged to build env
       uses: microsoft/powerplatform-actions/import-solution@v0
