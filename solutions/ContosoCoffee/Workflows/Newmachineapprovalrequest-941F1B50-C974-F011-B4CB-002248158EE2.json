@@ -58,17 +58,17 @@
           },
           "type": "OpenApiConnectionWebhook",
           "inputs": {
-            "parameters": {
-              "subscriptionRequest/message": 1,
-              "subscriptionRequest/entityname": "contoso_machineorder",
-              "subscriptionRequest/scope": 4,
-              "subscriptionRequest/name": "941f1b50-c974-f011-b4cb-002248158ee2:MTA"
-            },
             "host": {
               "connectionName": "shared_commondataserviceforapps",
               "operationId": "SubscribeWebhookTrigger",
               "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
-            }
+            },
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "contoso_machineorder",
+              "subscriptionRequest/scope": 4
+            },
+            "authentication": "@parameters('$authentication')"
           }
         }
       },
@@ -80,6 +80,11 @@
           },
           "type": "OpenApiConnectionWebhook",
           "inputs": {
+            "host": {
+              "connectionName": "shared_approvals",
+              "operationId": "StartAndWaitForAnApproval",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_approvals"
+            },
             "parameters": {
               "approvalType": "Basic",
               "WebhookApprovalCreationInput/title": "New machine request for @{triggerOutputs()?['body/contoso_machinename']}",
@@ -89,11 +94,7 @@
               "WebhookApprovalCreationInput/enableNotifications": true,
               "WebhookApprovalCreationInput/enableReassignment": true
             },
-            "host": {
-              "connectionName": "shared_approvals",
-              "operationId": "StartAndWaitForAnApproval",
-              "apiId": "/providers/Microsoft.PowerApps/apis/shared_approvals"
-            }
+            "authentication": "@parameters('$authentication')"
           }
         },
         "Condition": {
@@ -105,17 +106,18 @@
               },
               "type": "OpenApiConnection",
               "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
                 "parameters": {
                   "entityName": "contoso_machineorders",
                   "recordId": "@triggerOutputs()?['body/contoso_machineorderid']",
                   "item/contoso_approvalstatus": 330650000,
                   "item/contoso_approveddate": "@utcNow()"
                 },
-                "host": {
-                  "connectionName": "shared_commondataserviceforapps",
-                  "operationId": "UpdateOnlyRecord",
-                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
-                }
+                "authentication": "@parameters('$authentication')"
               }
             },
             "Send_an_email_(V2)": {
@@ -154,17 +156,18 @@
               },
               "type": "OpenApiConnection",
               "inputs": {
+                "host": {
+                  "connectionName": "shared_teams",
+                  "operationId": "PostMessageToConversation",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_teams"
+                },
                 "parameters": {
                   "poster": "Flow bot",
                   "location": "Chat with Flow bot",
                   "body/recipient": "@triggerOutputs()?['body/contoso_requestedby']",
                   "body/messageBody": "<p class=\"editor-paragraph\">Your machine was approved @{triggerOutputs()?['body/contoso_machinename']}</p><p class=\"editor-paragraph\">Estimated Ship Date: @{outputs('Update_a_row')?['body/contoso_estimatedshipdate']}</p>"
                 },
-                "host": {
-                  "connectionName": "shared_teams",
-                  "operationId": "PostMessageToConversation",
-                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_teams"
-                }
+                "authentication": "@parameters('$authentication')"
               }
             }
           },
@@ -182,16 +185,17 @@
                 },
                 "type": "OpenApiConnection",
                 "inputs": {
+                  "host": {
+                    "connectionName": "shared_commondataserviceforapps",
+                    "operationId": "UpdateOnlyRecord",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                  },
                   "parameters": {
                     "entityName": "contoso_machineorders",
                     "recordId": "@triggerOutputs()?['body/contoso_machineorderid']",
                     "item/contoso_approvalstatus": 330650001
                   },
-                  "host": {
-                    "connectionName": "shared_commondataserviceforapps",
-                    "operationId": "UpdateOnlyRecord",
-                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
-                  }
+                  "authentication": "@parameters('$authentication')"
                 }
               },
               "Send_an_email_(V2)_1": {
@@ -230,17 +234,18 @@
                 },
                 "type": "OpenApiConnection",
                 "inputs": {
+                  "host": {
+                    "connectionName": "shared_teams",
+                    "operationId": "PostMessageToConversation",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_teams"
+                  },
                   "parameters": {
                     "poster": "Flow bot",
                     "location": "Chat with Flow bot",
                     "body/recipient": "@triggerOutputs()?['body/contoso_requestedby']",
                     "body/messageBody": "<p class=\"editor-paragraph\">Your machine request for @{triggerOutputs()?['body/contoso_machinename']} was not approved.</p>"
                   },
-                  "host": {
-                    "connectionName": "shared_teams",
-                    "operationId": "PostMessageToConversation",
-                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_teams"
-                  }
+                  "authentication": "@parameters('$authentication')"
                 }
               }
             }
