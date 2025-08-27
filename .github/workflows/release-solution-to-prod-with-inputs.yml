@@ -62,7 +62,9 @@ jobs:
         lfs: true
 
     - name: Check PAC CLI version
-      run: pac
+      shell: pwsh # Use PowerShell for this step
+      run: |
+        pac
 
     - name: Pack solution
       uses: microsoft/powerplatform-actions/pack-solution@v1
