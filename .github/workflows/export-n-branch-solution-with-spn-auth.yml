@@ -42,6 +42,9 @@ jobs:
       with:
         lfs: true
 
+    - name: Install Power Platform Tools
+      uses: microsoft/powerplatform-actions/actions-install@v1
+
     - name: who-am-i action
       uses: microsoft/powerplatform-actions/who-am-i@v1
       with:
@@ -49,10 +52,7 @@ jobs:
         app-id: ${{env.CLIENT_ID}}
         client-secret: ${{ secrets.PowerPlatformSPN }}
         tenant-id: ${{env.TENANT_ID}}
-
-    - name: Install Power Platform Tools
-      uses: microsoft/powerplatform-actions/actions-install@v1
-
+    
     - name: export-solution action
       uses: microsoft/powerplatform-actions/export-solution@v1
       with:
