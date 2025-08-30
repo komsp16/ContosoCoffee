@@ -1,6 +1,8 @@
-# ContosoCoffee
-This solution has been built by following the Learning path on Microsoft Learn Labs for Power Apps.
-The path is found at https://learn.microsoft.com/en-us/training/paths/power-apps-online-workshop/
+# ContosoCoffee - Power Platform
+This solution has been built by following the Learning path on Microsoft Learn Labs for Power Platform.
+The learning path can be found at https://learn.microsoft.com/en-us/training/paths/power-apps-online-workshop/
+
+The application user interface and interaction logic are built in Power Apps, the approval workflow is automated using Power Automate, and the machine order data is stored in Microsoft Dataverse.
 
 # Canvas App: Contoso Machine Ordering
 
