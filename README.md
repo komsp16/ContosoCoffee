@@ -1,5 +1,7 @@
 # ContosoCoffee - Power Platform
-This solution has been built by following the Learning path on Microsoft Learn Labs for Power Platform. I am incorporating CI/CD using github workflow actions, secrets & PAC CLI.
+This solution has been built by following the Learning path on Microsoft Learn Labs for Power Platform. I am incorporating CI/CD using [github workflow](https://github.com/komsp16/ContosoCoffee/tree/b2ab704002f5f98984e04c1497b7019f44fc0300/.github/workflows)
+ actions, secrets & PAC CLI.
+
 The learning path can be found at https://learn.microsoft.com/en-us/training/paths/power-apps-online-workshop/
 
 The application user interface and interaction logic are built in Power Apps, the approval workflow is automated using Power Automate, and the machine order data is stored in Microsoft Dataverse.
@@ -19,18 +21,6 @@ The application user interface and interaction logic are built in Power Apps, th
   <img width="1834" height="950" alt="image" src="https://github.com/user-attachments/assets/31a4faad-0f13-4f3b-9f61-03f7b9f5a1da" />
    
 
-# Github CI/CD 
-  Workflow export and branch solution with SPN Auth (Service Principle Authentication)
-
-  <img width="1100" height="604" alt="image" src="https://github.com/user-attachments/assets/e09ac3a8-fad7-4a70-af5a-5dd45aba6d1b" />
-
-  PR to Merge new banch into the main branch
-  
-  <img width="1191" height="486" alt="image" src="https://github.com/user-attachments/assets/458ef3f3-b87b-4893-bf16-226e51537413" />
-
-  Reusable workflow to generate a build artifact and import to production on the release event
-  
-  <img width="1185" height="1071" alt="image" src="https://github.com/user-attachments/assets/9fd55221-6674-482d-af88-cbb3622d31d4" />
 
 
 # Power Automate : Approval Request flow & Teams Integration
@@ -45,7 +35,7 @@ The application user interface and interaction logic are built in Power Apps, th
   <img width="1411" height="916" alt="image" src="https://github.com/user-attachments/assets/ec91dc62-7072-4b3b-83ff-a07000356bc9" />
 
   
-  Approval Notification
+  Approval Notification (Teams)
 
   <img width="976" height="228" alt="image" src="https://github.com/user-attachments/assets/777f6f17-f1a3-489e-a10e-8139bf5860c4" />
 
