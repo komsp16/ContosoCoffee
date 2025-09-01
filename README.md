@@ -1,5 +1,5 @@
 # ContosoCoffee - Power Platform
-This solution has been built by following the Learning path on Microsoft Learn Labs for Power Platform. I am incorporating CI/CD using github actions & PAC CLI.
+This solution has been built by following the Learning path on Microsoft Learn Labs for Power Platform. I am incorporating CI/CD using github workflow actions, secrets & PAC CLI.
 The learning path can be found at https://learn.microsoft.com/en-us/training/paths/power-apps-online-workshop/
 
 The application user interface and interaction logic are built in Power Apps, the approval workflow is automated using Power Automate, and the machine order data is stored in Microsoft Dataverse.
@@ -17,11 +17,20 @@ The application user interface and interaction logic are built in Power Apps, th
   BPF with Additional Step for Capital Approval when price is > $10,000
 
   <img width="1834" height="950" alt="image" src="https://github.com/user-attachments/assets/31a4faad-0f13-4f3b-9f61-03f7b9f5a1da" />
+   
 
+# Github CI/CD 
+  Workflow export and branch solution with SPN Auth (Service Principle Authentication)
+
+  <img width="1100" height="604" alt="image" src="https://github.com/user-attachments/assets/e09ac3a8-fad7-4a70-af5a-5dd45aba6d1b" />
+
+  PR to Merge new banch into the main branch
   
-  BPF without Approval Step
+  <img width="1191" height="486" alt="image" src="https://github.com/user-attachments/assets/458ef3f3-b87b-4893-bf16-226e51537413" />
+
+  Reusable workflow to generate a build artifact and import to production on the release event
   
-  <img width="1839" height="950" alt="image" src="https://github.com/user-attachments/assets/36e69355-dc0f-4e87-b570-984f0773854d" />
+  <img width="1185" height="1071" alt="image" src="https://github.com/user-attachments/assets/9fd55221-6674-482d-af88-cbb3622d31d4" />
 
 
 # Power Automate : Approval Request flow & Teams Integration
