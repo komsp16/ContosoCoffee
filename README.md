@@ -1,5 +1,5 @@
 # ContosoCoffee - Power Platform
-This solution has been built by following the Learning path on Microsoft Learn Labs for Power Platform.
+This solution has been built by following the Learning path on Microsoft Learn Labs for Power Platform. I am incorporating CI/CD using github actions & PAC CLI.
 The learning path can be found at https://learn.microsoft.com/en-us/training/paths/power-apps-online-workshop/
 
 The application user interface and interaction logic are built in Power Apps, the approval workflow is automated using Power Automate, and the machine order data is stored in Microsoft Dataverse.
